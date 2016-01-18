@@ -8,11 +8,9 @@
 
   <!-- shortcut icon -->
   <link rel="shortcut icon" href="img\temperature.png">
-
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
@@ -20,13 +18,10 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
   folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-
   <!-- Style -->
   <link rel="stylesheet" href="css/style.css">
-
   <!-- Angular -->
   <script type="text/javascript" src="angular/angular.min.js"></script>
-
   <!-- Modulos Angular -->
   <script type="text/javascript" src="angular/app.js"></script>
 
@@ -76,22 +71,14 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label>Estado</label>
-                    <select class="form-control select2" style="width: 100%;" ng-model="estado.id">
-                      <option>SC</option>
-                      <option>AC</option>
-                      <option>AL</option>
-                      <option>AP</option>
-                      <option>BA</option>
-                      <option>AM</option>
-                      <option>CE</option>
-                    </select>
+                    <select id="estado" class="form-control select2" style="width: 100%;" ng-model="estado"></select>
                   </div>
                 </div><!-- /.box-body -->
 
                 <!-- Cidade -->
                 <div class="col-md-4">
                   <label>Cidade</label>
-                  <select class="form-control select2" style="width: 100%;" ng-model="cidade.id">
+                  <select id="cidade" class="form-control select2" style="width: 100%;" ng-model="cidade">
                     <option>Blumenau</option>
                     <option>Timbó</option>
                     <option>Indail</option>
@@ -101,12 +88,12 @@
                 <!-- Botões -->
                 <div class="col-md-4">
                   <!-- Botão Consultar -->
-                  <button type="button" name="btnConsultar" class="btn btn-info" ng-click="atualizaDados()">
+                  <button type="button" name="btnConsultar" class="btn btn-info" ng-click="consultaPrevisao()">
                     <p>Consultar</p>
                     <i class="glyphicon glyphicon-search"></i>
                   </button>
                   <!-- Botão favoritos     -->
-                  <button type="button" name="btnFavorito" class="btn btn-info">
+                  <button type="button" name="btnFavorito" class="btn btn-info" id="btnFavorito">
                     <p>Favorito</p>
                     <i class="glyphicon glyphicon-star-empty"></i>
                   </button>
@@ -131,6 +118,9 @@
             <div class="box-body" id="diaSemana"><!-- Hoje -->
               <div class="row">
                 <div class="col-md-4 col-sm6 col-xs-12">
+
+
+
                   <div class="box box-widget widget-user">
                     <div class="widget-user-header bg-aqua-active">
                       <h3 class="widget-user-username" ng-bind="myData.previsoes[0].data"></h3>
@@ -155,6 +145,11 @@
                         </div><!-- /.col -->
                       </div><!-- /.row -->
                     </div>
+
+                    <div class="overlay"  ng-hide="carregando"><!--  Carregando -->
+                      <i class="fa fa-refresh fa-spin"></i>
+                    </div>
+
                   </div>
                 </div>
 
@@ -182,6 +177,9 @@
                           </div><!-- /.description-block -->
                         </div><!-- /.col -->
                       </div><!-- /.row -->
+                    </div>
+                    <div class="overlay" ng-hide="carregando"><!--  Carregando -->
+                      <i class="fa fa-refresh fa-spin"></i>
                     </div>
                   </div>
                 </div>
@@ -212,6 +210,9 @@
                         </div><!-- /.col -->
                       </div><!-- /.row -->
                     </div>
+                    <div class="overlay" ng-hide="carregando"><!--  Carregando -->
+                      <i class="fa fa-refresh fa-spin"></i>
+                    </div>
                   </div>
                 </div>
                 <!-- Fim proximo dia 2 -->
@@ -240,6 +241,9 @@
                           </div><!-- /.description-block -->
                         </div><!-- /.col -->
                       </div><!-- /.row -->
+                    </div>
+                    <div class="overlay" ng-hide="carregando"><!--  Carregando -->
+                      <i class="fa fa-refresh fa-spin"></i>
                     </div>
                   </div>
                 </div>
@@ -270,6 +274,9 @@
                         </div><!-- /.col -->
                       </div><!-- /.row -->
                     </div>
+                    <div class="overlay" ng-hide="carregando"><!--  Carregando -->
+                      <i class="fa fa-refresh fa-spin"></i>
+                    </div>
                   </div>
                 </div>
                 <!-- Fim proximo dia 4 -->
@@ -278,7 +285,7 @@
           </div>
         </div>
 
-        <div class="col-md-4 col-sm6 col-xs-4 col-xs-12"><!-- Box Recomendações -->
+        <div class="col-md-4 col-sm6 col-xs-12"><!-- Box Recomendações -->
           <div class="box box-info" id="cidadeEstado">
             <div class="box-header with-border">
               <h5 class="box-title">Dias com temperatura máxima e mínima</h5>
@@ -309,10 +316,13 @@
                 </div>
               </div>
             </div>
+            <div class="overlay" ng-hide="carregando"><!--  Carregando -->
+              <i class="fa fa-refresh fa-spin"></i>
+            </div>
           </div>
         </div><!-- Fim Box Recomendações -->
 
-        <div class="col-md-4 col-sm6 col-xs-4 col-xs-12"><!-- Box Recomendações -->
+        <div class="col-md-4 col-sm6 col-xs-12"><!-- Box Recomendações -->
           <div class="box box-info" id="cidadeEstado">
             <div class="box-header with-border">
               <h5 class="box-title">Recomendações</h5>
@@ -327,21 +337,27 @@
                 <p>A temperatura média do dia de hoje está abaixo de 25º.</p>
               </div>
             </div><!-- /.box-body -->
+            <div class="overlay" ng-hide="carregando"><!--  Carregando -->
+              <i class="fa fa-refresh fa-spin"></i>
+            </div>
           </div>
         </div><!-- Fim Box Recomendações -->
 
-        <div class="col-md-4 col-sm6 col-xs-4 col-xs-12"><!-- Box Recomendações -->
+        <div class="col-md-4 col-sm6 col-xs-12"><!-- Box Gráfico -->
           <div class="box box-info" id="cidadeEstado">
             <div class="box-header with-border">
               <h5 class="box-title">Gráfico de variação de Temperatura</h5>
             </div><!-- /.box-header -->
-            <div class="box-body" id="cidadeEstado">
+            <div class="box-body">
               <div class="chart">
-                <canvas id="areaChart" name="grafico" width="488" height="244" style="width: 488px; height: 244px;"></canvas>
+                <canvas id="areaChart" style="height:250px"></canvas>
               </div>
+            </div><!-- /.box-body -->
+            <div class="overlay" ng-hide="carregando"><!--  Carregando -->
+              <i class="fa fa-refresh fa-spin"></i>
             </div>
           </div>
-        </div><!-- Fim Box Recomendações -->
+        </div><!-- Fim Box Gráfico -->
 
         <!-- jQuery 2.1.4 -->
         <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
@@ -357,6 +373,11 @@
         <script src="dist/js/demo.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <!-- ChartJS 1.0.1 -->
+        <script src="plugins/chartjs/Chart.min.js"></script>
+        <!-- Cidades Estados -->
+        <script type="text/javascript" src="js/cidades-estados-1.4-utf8.js"></script>
+        <script type="text/javascript" src="js/cidadesEstados.js"></script>
 
       </body>
       </html>
