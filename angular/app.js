@@ -25,7 +25,7 @@ app.controller("myCtrlTemp", function($scope, $http){
     lista = $.map(obj, function(el) { return el });
     $scope.atualizaPrevisoes($scope,lista);
     $scope.recomendacoes($scope);
-    $scope.carregaGrafico();
+    $scope.carregaGrafico($scope,lista);
     $scope.carregando = true;
   });
 
@@ -49,7 +49,7 @@ app.controller("myCtrlTemp", function($scope, $http){
       lista = $.map(obj, function(el) { return el });
       $scope.atualizaPrevisoes($scope,lista);
       $scope.recomendacoes($scope);
-      $scope.carregaGrafico();
+      $scope.carregaGrafico($scope,lista);
       $scope.carregando = true;
     });
   }
@@ -88,12 +88,12 @@ app.controller("myCtrlTemp", function($scope, $http){
 
   //**** METODO ****
   //Carrega Gráfico
-  $scope.carregaGrafico = function(){
+  $scope.carregaGrafico = function($scope, lista){
     var areaChartCanvas = $("#areaChart").get(0).getContext("2d");
     var areaChart = new Chart(areaChartCanvas);
 
     var areaChartData = {
-      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      labels: [lista[2].data, lista[3].data,lista[4].data, lista[5].data, lista[6].data],
       datasets: [
         {
           label: "Electronics",
@@ -103,7 +103,7 @@ app.controller("myCtrlTemp", function($scope, $http){
           pointStrokeColor: "#c1c7d1",
           pointHighlightFill: "#fff",
           pointHighlightStroke: "rgba(220,220,220,1)",
-          data: [65, 59, 80, 81, 56, 55, 40]
+          data: [lista[2].temperatura_max, lista[3].temperatura_max,lista[4].temperatura_max, lista[5].temperatura_max, lista[6].temperatura_max] //Temperatura Máxima
         },
         {
           label: "Digital Goods",
@@ -113,7 +113,7 @@ app.controller("myCtrlTemp", function($scope, $http){
           pointStrokeColor: "rgba(60,141,188,1)",
           pointHighlightFill: "#fff",
           pointHighlightStroke: "rgba(60,141,188,1)",
-          data: [28, 48, 40, 19, 86, 27, 90]
+          data: [lista[2].temperatura_min, lista[3].temperatura_min,lista[4].temperatura_min, lista[5].temperatura_min, lista[6].temperatura_min] //Temperatura Mínima
         }
       ]
     };
