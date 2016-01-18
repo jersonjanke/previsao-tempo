@@ -1,0 +1,11 @@
+#fundo{
+      background-color: azure;
+}
+
+#diaSemana, #cidadeEstado{
+      background-color: ghostwhite;
+}
+
+.temp-color{
+      background-color: paleturquoise;
+}
