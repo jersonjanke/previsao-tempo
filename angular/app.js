@@ -1,8 +1,7 @@
 /*
-Projeto: Previsão do Tempo
-Data de criação: 15/01/2016
-Programador: Jerson Janke
-
+* Projeto: Previsão do Tempo
+* Data de criação: 15/01/2016
+* Programador: Jerson Janke
 */
 var app = angular.module("myTemp", []);
 var maxima = 0;
