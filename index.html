@@ -52,7 +52,8 @@
       <!-- Título -->
       <div class="row">
         <div class="col-md-12">
-          <h4>Consulte a previsão do tempo desta semana</h4>
+          <h4>Consulte a previsão do tempo desta semana:<b> {{cidadeAtual +" - "+estadoAtual}}</b></h4>
+          {{estadoCache}}
         </div>
       </div>
     </div><!-- Fim Título -->
@@ -93,7 +94,7 @@
                     <i class="glyphicon glyphicon-search"></i>
                   </button>
                   <!-- Botão favoritos     -->
-                  <button type="button" name="btnFavorito" class="btn btn-info" id="btnFavorito">
+                  <button type="button" name="btnFavorito" class="btn btn-info" id="btnFavorito" ng-click="salvaFavorito()">
                     <p>Favorito</p>
                     <i class="glyphicon glyphicon-star-empty"></i>
                   </button>
@@ -328,18 +329,35 @@
               <h5 class="box-title">Recomendações</h5>
             </div><!-- /.box-header -->
             <div class="box-body">
-              <div ng-show="recomendacaoPositivo" class="callout callout-success">
-                <h4>Pode ir a praia!</h4>
-                <p>A temperatura média do dia de hoje está acima de 25º.</p>
+              <!-- Recomendação positivo -->
+              <div ng-show="recomendacaoPositivo">
+                <h4>Recomendação de praia positiva.</h4>
+                <h5>A temperatura do final de semana está acima de 25 º</h5>
+                <img class="img-circle" src="img/positivo.jpg" />
               </div>
-              <div ng-show="recomendacaoNegativo" class="callout callout-danger">
-                <h4>Não vá para a praia!</h4>
-                <p>A temperatura média do dia de hoje está abaixo de 25º.</p>
+              <!-- Recomendação Negativo -->
+              <div ng-show="recomendacaoNegativo">
+                <h4>Recomendação de praia negativa</h4>
+                <h5>A temperatura do final de semana está abaixo de 25 º</h5>
+                <div class="widget-user-image">
+                  <img class="img-circle" src="img/negativo.jpg" />
+                </div>
               </div>
+              <!-- Sem recomendação -->
+              <div ng-show="semFinal">
+                <h4>Recomendação de praia negativa</h4>
+                <h5>Não houve final de semana nos próximos dias</h5>
+                <div class="widget-user-image">
+                  <img class="img-circle" src="img/semprevisao.png" />
+                </div>
+              </div>
+
             </div><!-- /.box-body -->
+
             <div class="overlay" ng-hide="carregando"><!--  Carregando -->
               <i class="fa fa-refresh fa-spin"></i>
             </div>
+
           </div>
         </div><!-- Fim Box Recomendações -->
 
