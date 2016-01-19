@@ -79,11 +79,7 @@
                 <!-- Cidade -->
                 <div class="col-md-4">
                   <label>Cidade</label>
-                  <select id="cidade" class="form-control select2" style="width: 100%;" ng-model="cidade">
-                    <option>Blumenau</option>
-                    <option>Timbó</option>
-                    <option>Indail</option>
-                  </select>
+                  <select id="cidade" class="form-control select2" style="width: 100%;" ng-model="cidade"></select>
                 </div>
 
                 <!-- Botões -->
@@ -94,7 +90,7 @@
                     <i class="glyphicon glyphicon-search"></i>
                   </button>
                   <!-- Botão favoritos     -->
-                  <button type="button" name="btnFavorito" class="btn btn-info" id="btnFavorito" ng-click="salvaFavorito()">
+                  <button type="button" name="btnFavorito" class="btn btn-info" id="btnFavorito" ng-click="salvaFavorito(cidade,estado)">
                     <p>Favorito</p>
                     <i class="glyphicon glyphicon-star-empty"></i>
                   </button>

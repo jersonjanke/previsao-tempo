@@ -4,14 +4,19 @@
 * Programador: Jerson Janke
 */
 var app = angular.module("myTemp", []);
-var maxima = 0;
-var minima = 99;
-var dataMaxima;
-var dataMinima;
 var  obj;
 var lista;
-var estado = "SC";
-var cidade = "Blumenau";
+var estado;
+var cidade;
+
+//Controla cache da cidade e estado
+if ((localStorage.estadoCache == undefined) || (localStorage.cidadeCache == undefined)){
+  estado = "SC";
+  cidade = "Blumenau";
+} else {
+  estado = localStorage.estadoCache;
+  cidade = localStorage.cidadeCache;
+}
 
 // Carrega dados
 app.controller("myCtrlTemp", function($scope, $http){
@@ -52,6 +57,8 @@ app.controller("myCtrlTemp", function($scope, $http){
       $scope.carregando = true;
       $scope.cidadeAtual = cidade;
       $scope.estadoAtual = estado;
+      cidade = $scope.cidadeAtual;
+      estado = $scope.estadoAtual;
     });
   }
 
@@ -117,7 +124,7 @@ app.controller("myCtrlTemp", function($scope, $http){
     dia4 = $scope.copiaDiaSemana(data4);
     dia5 = $scope.copiaDiaSemana(data5);
 
-    // Verifica Sabado
+    // Verifica Sábado
     if(dia2 == 'Sábado'){
       if(temperaturaMax2 >= 25){
         $scope.recomendacaoPositivo = true;
@@ -306,10 +313,16 @@ app.controller("myCtrlTemp", function($scope, $http){
 
   //**** METODO ****
   // Salvar Favoritos
-  $scope.salvaFavorito = function(){
-    console.log('Favoritos');
+  $scope.salvaFavorito = function(cid,est){
+
+    localStorage.cidadeCache = cid;
+    localStorage.estadoCache = est;
+    console.log(localStorage.estadoCache);
+    console.log(localStorage.cidadeCache);
   }
 
+  //**** METODO ****
+  // Copia somente o nome da semana
   $scope.copiaDiaSemana = function(data){
     var dia = "";
     for (var i = 0; i < data.length; i++) {
