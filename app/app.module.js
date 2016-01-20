@@ -78,6 +78,7 @@ app.controller("myCtrlTemp", function($scope, $http){
   // Atualiza Box Recomendação verificando se
   // no proximos dias terá final de semnana e temperatura for > 25
   $scope.recomendacoes = function($scope, lista){
+
     // Data
     var data2 = lista[3].data;
     var data3 = lista[4].data;
@@ -108,30 +109,92 @@ app.controller("myCtrlTemp", function($scope, $http){
     dia5 = $scope.copiaDiaSemana(data5);
 
     // Verifica Sábado
-    if((dia2 == 'Sábado')||(dia3 == 'Sábado')||(dia4 == 'Sábado')||(dia5 == 'Sábado')){
+    if(dia2 == 'Sábado'){
       if(temperaturaMax2 >= 25){
         $scope.recomendacaoPositivo = true;
-        $scope.diaRecomendacao = "Sábado";
         finalSemana = true;
       }
       else{
         $scope.recomendacaoNegativo = true;
-        $scope.diaRecomendacao = "Sábado";
+        finalSemana = true;
+      }
+    }
+
+    if(dia3 == 'Sábado'){
+      if(temperaturaMax3 >= 25){
+        $scope.recomendacaoPositivo = true;
+        finalSemana = true;
+      }
+      else{
+        $scope.recomendacaoNegativo = true;
+        finalSemana = true;
+      }
+    }
+
+    if(dia4 == 'Sábado'){
+      if(temperaturaMax4 >= 25){
+        $scope.recomendacaoPositivo = true;
+        finalSemana = true;
+      }
+      else{
+        $scope.recomendacaoNegativo = true;
+        finalSemana = true;
+      }
+    }
+
+    if(dia5 == 'Sábado'){
+      if(temperaturaMax5 >= 25){
+        $scope.recomendacaoPositivo = true;
+        finalSemana = true;
+      } else {
+        $scope.recomendacaoNegativo = true;
         finalSemana = true;
       }
     }
 
     // Verifica Dómingo
+    // Verifica Dómingo
     if(finalSemana == false){
-      if((dia2 == 'Domingo')||(dia3 == 'Domingo')||(dia4 == 'Domingo')||(dia5 == 'Domingo')){
+      if(dia2 == 'Domingo'){
         if(temperaturaMax2 >= 25){
           $scope.recomendacaoPositivo = true;
-          $scope.diaRecomendacao = "Domingo";
           finalSemana = true;
         }
         else{
           $scope.recomendacaoNegativo = true;
-          $scope.diaRecomendacao = "Domingo";
+          finalSemana = true;
+        }
+      }
+
+      if(dia3 == 'Domingo'){
+        if(temperaturaMax3 >= 25){
+          $scope.recomendacaoPositivo = true;
+          finalSemana = true;
+        }
+        else{
+          $scope.recomendacaoNegativo = true;
+          finalSemana = true;
+        }
+      }
+
+      if(dia4 == 'Domingo'){
+        if(temperaturaMax4 >= 25){
+          $scope.recomendacaoPositivo = true;
+          finalSemana = true;
+        }
+        else{
+          $scope.recomendacaoNegativo = true;
+          finalSemana = true;
+        }
+      }
+
+      if(dia5 == 'Domingo'){
+        if(temperaturaMax5 >= 25){
+          $scope.recomendacaoPositivo = true;
+          finalSemana = true;
+        }
+        else{
+          $scope.recomendacaoNegativo = true;
           finalSemana = true;
         }
       }
