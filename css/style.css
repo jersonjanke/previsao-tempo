@@ -1,9 +1,8 @@
-#fundo{
-  /*background-color: azure;*/
+.fundo{
   background-color: E9E9E9;
 }
 
-#diaSemana, #cidadeEstado{
+.corFundo{
   background-color: ghostwhite;
 }
 

@@ -23,7 +23,7 @@
   <!-- Angular -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.min.js"></script>
   <!-- Modulos Angular -->
-  <script type="text/javascript" src="angular/app.js"></script>
+  <script type="text/javascript" src="app/app.module.js"></script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,7 +33,6 @@
   <![endif]-->
 </head>
 <body class="hold-transition skin-blue layout-top-nav" ng-app="myTemp">
-
   <!-- Cabeçalho -->
   <div class="wrapper">
     <div class="main-header">
@@ -46,14 +45,12 @@
       </div>
     </div>
 
-
-    <div class="content-wrapper" id="fundo" ng-controller="myCtrlTemp">
+    <div class="content-wrapper fundo" ng-controller="myCtrlTemp">
       <div class="container">
         <!-- Título -->
         <div class="row">
           <div class="col-md-12">
-            <h4>Consulte a previsão do tempo desta semana:<b> {{cidadeAtual +" - "+estadoAtual}}</b></h4>
-            {{estadoCache}}
+            <h4>Consulte a previsão do tempo desta semana:<strong> {{cidadeAtual +" - "+estadoAtual}}</strong></h4>
           </div>
         </div>
       </div><!-- Fim Título -->
@@ -61,22 +58,20 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="box box-info" id="cidadeEstado"> <!-- Box Cidade e Estado -->
+            <div class="box box-info corFundo"> <!-- Box Cidade e Estado -->
               <div class="box-header with-border">
-
+                <!-- Box-tools -->
                 <div class="box-tools pull-right">
                   <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                   <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                 </div><!-- /.box-tools -->
-
                 <h5 class="box-title">Informe a cidade e estado</h5>
               </div><!-- /.box-header -->
 
-
-              <div class="box-body" id="cidadeEstado" ng-init="carregaCidadeEstado()">
+              <div class="box-body corFundo" ng-init="carregaCidadeEstado()">
                 <div class="row">
                   <!-- Estado -->
-                  <div class="col-md-4">
+                  <div class="col-md-4 col-sm6 col-xs-12">
                     <div class="form-group">
                       <label>Estado</label>
                       <select id="estado" class="form-control select2" style="width: 100%;" ng-model="estado"></select>
@@ -84,25 +79,25 @@
                   </div><!-- /.box-body -->
 
                   <!-- Cidade -->
-                  <div class="col-md-4">
+                  <div class="col-md-4 col-sm6 col-xs-12">
                     <label>Cidade</label>
                     <select id="cidade" class="form-control select2" style="width: 100%;" ng-model="cidade"></select>
                   </div>
 
                   <!-- Botões -->
-                  <div class="col-md-4">
+                  <div class="col-md-4 col-sm6 col-xs-12">
                     <!-- Botão Consultar -->
-                    <button type="button" name="btnConsultar" class="btn btn-info" ng-click="consultaPrevisao()">
-                      <p>Consultar</p>
+                    <a class="btn btn-app" ng-click="consultaPrevisao()">
                       <i class="glyphicon glyphicon-search"></i>
-                    </button>
-                    <!-- Botão favoritos     -->
-                    <button type="button" name="btnFavorito" class="btn btn-info" id="btnFavorito" ng-click="salvaFavorito(cidade,estado)">
-                      <p>Favorito</p>
-                      <i class="glyphicon glyphicon-star-empty"></i>
-                    </button>
-                  </div>
+                      Consultar
+                    </a>
 
+                    <!-- Botão favoritos     -->
+                     <a class="btn btn-app" ng-click="salvaFavorito(cidade,estado)">
+                       <i class="glyphicon glyphicon-star-empty"></i>
+                       Favorito
+                     </a>
+                  </div>
                 </div>
               </div>
             </div><!-- Fim Box Cidade e Estado -->
@@ -113,27 +108,20 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-sm6 col-xs-12">
-
-            <div class="box box-info" id="diaSemana"><!--  Box dias da Semana -->
-
+            <div class="box box-info corFundo"><!--  Box dias da Semana -->
               <div class="box-header with-border">
-
                 <div class="box-tools pull-right">
                   <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                   <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                 </div><!-- /.box-tools -->
-
                 <h5 class="box-title">Dias da Semana</h5>
               </div>
-
-              <div class="box-body" id="diaSemana"><!-- Hoje -->
+              <div class="box-body corFundo"><!-- Hoje -->
                 <div class="row">
                   <div class="col-md-4 col-sm6 col-xs-12">
-
                     <div class="box box-widget widget-user">
                       <div class="widget-user-header bg-aqua-active">
                         <h3 class="widget-user-username" ng-bind="myData.previsoes[0].data"></h3>
-
                       </div>
                       <div class="widget-user-image">
                         <img class="img-circle" ng-src="{{myData.previsoes[0].imagem}}" ng-model="selectedImg">
@@ -154,11 +142,9 @@
                           </div><!-- /.col -->
                         </div><!-- /.row -->
                       </div>
-
                       <div class="overlay"  ng-hide="carregando"><!--  Carregando -->
                         <i class="fa fa-refresh fa-spin"></i>
                       </div>
-
                     </div>
                   </div>
 
@@ -295,19 +281,16 @@
           </div>
 
           <div class="col-md-4 col-sm6 col-xs-12"><!-- Box Recomendações -->
-            <div class="box box-info" id="cidadeEstado">
-
+            <div class="box box-info corFundo">
               <div class="box-header with-border">
                 <h5 class="box-title">Dias com temperatura</h5>
                 <h4>Máxima e Mínima</h4>
-
                 <div class="box-tools pull-right">
                   <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                   <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                 </div><!-- /.box-tools -->
-
               </div><!-- /.box-header -->
-              <div class="box-body" id="cidadeEstado">
+              <div class="box-body corFundo">
                 <!-- Máximo -->
                 <div class="info-box">
                   <span class="info-box-icon bg-red">
@@ -340,21 +323,19 @@
           </div><!-- Fim Box Recomendações -->
 
           <div class="col-md-4 col-sm6 col-xs-12"><!-- Box Recomendações -->
-            <div class="box box-info" id="cidadeEstado">
+            <div class="box box-info corFundo">
               <div class="box-header with-border">
                 <h5 class="box-title">Recomendações</h5>
-
                 <div class="box-tools pull-right">
                   <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                   <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                 </div><!-- /.box-tools -->
-
               </div><!-- /.box-header -->
               <div class="box-body">
                 <!-- Recomendação positivo -->
                 <div ng-show="recomendacaoPositivo">
-                  <h4>Recomendação de praia positiva.</h4>
-                  <h5>A temperatura do final de semana está acima de 25 º</h5>
+                  <h4>Recomendação de praia positiva</h4>
+                  <h5>A temperatura para {{diaRecomendacao}} está acima de 25 º</h5>
                   <center>
                     <img class="img-circle" src="img/positivo.jpg" />
                   </center>
@@ -362,7 +343,7 @@
                 <!-- Recomendação Negativo -->
                 <div ng-show="recomendacaoNegativo">
                   <h4>Recomendação de praia negativa</h4>
-                  <h5>A temperatura do final de semana está abaixo de 25 º</h5>
+                  <h5>A temperatura para {{diaRecomendacao}} está abaixo de 25 º</h5>
                   <div class="widget-user-image">
                     <center>
                       <img class="img-circle" src="img/negativo.jpg" />
@@ -379,18 +360,15 @@
                     </center>
                   </div>
                 </div>
-
               </div><!-- /.box-body -->
-
               <div class="overlay" ng-hide="carregando"><!--  Carregando -->
                 <i class="fa fa-refresh fa-spin"></i>
               </div>
-
             </div>
           </div><!-- Fim Box Recomendações -->
 
           <div class="col-md-4 col-sm6 col-xs-12"><!-- Box Gráfico -->
-            <div class="box box-info" id="cidadeEstado">
+            <div class="box box-info corFundo">
               <div class="box-header with-border">
                 <h5 class="box-title">Gráfico de variação de Temperatura</h5>
 
@@ -412,9 +390,9 @@
           </div><!-- Fim Box Gráfico -->
         </div>
 
-        <footer class="main-footer" id="rodape">
+        <footer class="main-footer">
           <div class="container">
-            <strong>Copyright &copy; 2014-2015</strong> All rights reserved.
+            Visite <a href="http://developers.agenciaideias.com.br/tempo">API Previsão do Tempo</a> para mais informações sobre o plugin.
           </div><!-- /.container -->
         </footer>
 
@@ -435,8 +413,7 @@
         <!-- ChartJS 1.0.1 -->
         <script src="plugins/chartjs/Chart.min.js"></script>
         <!-- Cidades Estados -->
-        <script type="text/javascript" src="js/cidades-estados-1.4-utf8.js"></script>
-        <script type="text/javascript" src="js/cidadesEstados.js"></script>
-
+        <script type="text/javascript" src="app/components/cidades-estados-1.4-utf8.js"></script>
+        <script type="text/javascript" src="app/components/cidadesEstados.js"></script>
       </body>
       </html>

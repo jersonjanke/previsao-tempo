@@ -1,14 +1,13 @@
 /*
 * Projeto: Previsão do Tempo
 * Data de criação: 15/01/2016
+* Data do término : 20/01/2016
 * Programador: Jerson Janke
+* GitHub: https://github.com/jersonjanke/previsao-tempo
 */
 var app = angular.module("myTemp", []);
-var  obj;
-var lista;
-var estado;
-var cidade;
 
+//Verifica se tem favorito salvo
 if ((localStorage.estadoCache == undefined ) || (localStorage.cidadeCache == undefined )){
   estado = "SC";
   cidade = "Blumenau";
@@ -17,21 +16,14 @@ if ((localStorage.estadoCache == undefined ) || (localStorage.cidadeCache == und
   cidade = localStorage.cidadeCache;
 }
 
-
 // Carrega dados
 app.controller("myCtrlTemp", function($scope, $http){
-
   //Atualiza dados iniciais
   $http.get("http://developers.agenciaideias.com.br/tempo/json/"+cidade+"-"+estado).
   success(function(response){
-    obj = $scope.myData = response;
-    lista = $.map(obj, function(el) { return el });
-    $scope.atualizaPrevisoes($scope,lista);
-    $scope.recomendacoes($scope,lista);
-    $scope.carregaGrafico($scope,lista);
-    $scope.carregando = true;
-    $scope.cidadeAtual = cidade;
-    $scope.estadoAtual = estado;
+    $scope.carregaPrevisao(response,cidade,estado);
+  }).error(function(response){
+    alert("Não existem previsão do tempo para está cidade e estado");
   });
 
   //**** METODO ****
@@ -46,26 +38,18 @@ app.controller("myCtrlTemp", function($scope, $http){
   //**** METODO ****
   //Nova consulta ao clicar no botão consultar
   $scope.carregaDados = function(cidade,estado){
-
     $http.get("http://developers.agenciaideias.com.br/tempo/json/"+cidade+"-"+estado).
     success(function(response){
-      obj = $scope.myData = response;
-      lista = $.map(obj, function(el) { return el });
-      $scope.atualizaPrevisoes($scope,lista);
-      $scope.recomendacoes($scope,lista);
-      $scope.carregaGrafico($scope,lista);
-      $scope.carregando = true;
-      $scope.cidadeAtual = cidade;
-      $scope.estadoAtual = estado;
-      cidade = $scope.cidadeAtual;
-      estado = $scope.estadoAtual;
+      $scope.carregaPrevisao(response,cidade,estado);
+    }).error(function(response){
+      alert("Não existem previsão do tempo para está cidade e estado");
+      $scope.carregaDados("Blumenau","SC");
     });
   }
 
   //**** METODO ****
   // Atualiza Box Máximo e Mínima
   $scope.atualizaPrevisoes = function($scope, lista){
-
     var maxima = 0;
     var minima = 99;
     var dataMaxima;
@@ -94,7 +78,6 @@ app.controller("myCtrlTemp", function($scope, $http){
   // Atualiza Box Recomendação verificando se
   // no proximos dias terá final de semnana e temperatura for > 25
   $scope.recomendacoes = function($scope, lista){
-
     // Data
     var data2 = lista[3].data;
     var data3 = lista[4].data;
@@ -125,91 +108,32 @@ app.controller("myCtrlTemp", function($scope, $http){
     dia5 = $scope.copiaDiaSemana(data5);
 
     // Verifica Sábado
-    if(dia2 == 'Sábado'){
+    if((dia2 == 'Sábado')||(dia3 == 'Sábado')||(dia4 == 'Sábado')||(dia5 == 'Sábado')){
       if(temperaturaMax2 >= 25){
         $scope.recomendacaoPositivo = true;
+        $scope.diaRecomendacao = "Sábado";
         finalSemana = true;
       }
       else{
         $scope.recomendacaoNegativo = true;
-        finalSemana = true;
-      }
-    }
-
-    if(dia3 == 'Sábado'){
-      if(temperaturaMax3 >= 25){
-        $scope.recomendacaoPositivo = true;
-        finalSemana = true;
-      }
-      else{
-        $scope.recomendacaoNegativo = true;
-        finalSemana = true;
-      }
-    }
-
-    if(dia4 == 'Sábado'){
-      if(temperaturaMax4 >= 25){
-        $scope.recomendacaoPositivo = true;
-        finalSemana = true;
-      }
-      else{
-        $scope.recomendacaoNegativo = true;
-        finalSemana = true;
-      }
-    }
-
-    if(dia5 == 'Sábado'){
-      if(temperaturaMax5 >= 25){
-        $scope.recomendacaoPositivo = true;
-        finalSemana = true;
-      } else {
-        $scope.recomendacaoNegativo = true;
+        $scope.diaRecomendacao = "Sábado";
         finalSemana = true;
       }
     }
 
     // Verifica Dómingo
-    if(dia2 == 'Domingo'){
-      if(temperaturaMax2 >= 25){
-        $scope.recomendacaoPositivo = true;
-        finalSemana = true;
-      }
-      else{
-        $scope.recomendacaoNegativo = true;
-        finalSemana = true;
-      }
-    }
-
-    if(dia3 == 'Domingo'){
-      if(temperaturaMax3 >= 25){
-        $scope.recomendacaoPositivo = true;
-        finalSemana = true;
-      }
-      else{
-        $scope.recomendacaoNegativo = true;
-        finalSemana = true;
-      }
-    }
-
-    if(dia4 == 'Domingo'){
-      if(temperaturaMax4 >= 25){
-        $scope.recomendacaoPositivo = true;
-        finalSemana = true;
-      }
-      else{
-        $scope.recomendacaoNegativo = true;
-        finalSemana = true;
-      }
-    }
-
-    if(dia5 == 'Domingo'){
-      if(temperaturaMax5 >= 25){
-        $scope.recomendacaoPositivo = true;
-        finalSemana = true;
-      }
-      else{
-        $scope.recomendacaoNegativo = true;
-        finalSemana = true;
+    if(finalSemana == false){
+      if((dia2 == 'Domingo')||(dia3 == 'Domingo')||(dia4 == 'Domingo')||(dia5 == 'Domingo')){
+        if(temperaturaMax2 >= 25){
+          $scope.recomendacaoPositivo = true;
+          $scope.diaRecomendacao = "Domingo";
+          finalSemana = true;
+        }
+        else{
+          $scope.recomendacaoNegativo = true;
+          $scope.diaRecomendacao = "Domingo";
+          finalSemana = true;
+        }
       }
     }
 
@@ -222,7 +146,6 @@ app.controller("myCtrlTemp", function($scope, $http){
   //**** METODO ****
   //Carrega Gráfico
   $scope.carregaGrafico = function($scope, lista){
-
     //Carrega dados da lista
     var data1 = lista[2].data;
     var data2 = lista[3].data;
@@ -305,18 +228,21 @@ app.controller("myCtrlTemp", function($scope, $http){
       //Boolean - whether to make the chart responsive to window resizing
       responsive: true
     };
-
     //Create the line chart
     areaChart.Line(areaChartData, areaChartOptions);
-
   } // Fim Gráfico
 
   //**** METODO ****
   // Salvar Favoritos
   $scope.salvaFavorito = function(cid,est){
-    localStorage.cidadeCache = cid;
-    localStorage.estadoCache = est;
-    alert('Favorito salvo com sucesso.');
+    if((cid == undefined) || (est == undefined)){
+      alert("Informar Cidade e Estado para salvar favorito.");
+    }
+    else{
+      localStorage.cidadeCache = cid;
+      localStorage.estadoCache = est;
+      alert('Favorito salvo com sucesso.');
+    }
   }
 
   //**** METODO ****
@@ -332,5 +258,17 @@ app.controller("myCtrlTemp", function($scope, $http){
     }
     dia = dia.trim();
     return dia;
+  }
+
+  //**** METODO ****
+  $scope.carregaPrevisao = function(previsao,cidade,estado){
+    obj = $scope.myData = previsao;
+    lista = $.map(obj, function(el) { return el });
+    $scope.atualizaPrevisoes($scope,lista);
+    $scope.recomendacoes($scope,lista);
+    $scope.carregaGrafico($scope,lista);
+    $scope.carregando = true;
+    $scope.cidadeAtual = cidade;
+    $scope.estadoAtual = estado;
   }
 });
