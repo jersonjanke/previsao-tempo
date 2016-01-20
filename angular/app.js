@@ -9,14 +9,14 @@ var lista;
 var estado;
 var cidade;
 
-//Controla cache da cidade e estado
-if ((localStorage.estadoCache == undefined) || (localStorage.cidadeCache == undefined)){
+if ((localStorage.estadoCache == undefined ) || (localStorage.cidadeCache == undefined )){
   estado = "SC";
   cidade = "Blumenau";
 } else {
   estado = localStorage.estadoCache;
   cidade = localStorage.cidadeCache;
 }
+
 
 // Carrega dados
 app.controller("myCtrlTemp", function($scope, $http){
@@ -314,11 +314,9 @@ app.controller("myCtrlTemp", function($scope, $http){
   //**** METODO ****
   // Salvar Favoritos
   $scope.salvaFavorito = function(cid,est){
-
     localStorage.cidadeCache = cid;
     localStorage.estadoCache = est;
-    console.log(localStorage.estadoCache);
-    console.log(localStorage.cidadeCache);
+    alert('Favorito salvo com sucesso.');
   }
 
   //**** METODO ****
@@ -335,5 +333,4 @@ app.controller("myCtrlTemp", function($scope, $http){
     dia = dia.trim();
     return dia;
   }
-
 });

@@ -7,7 +7,7 @@
   <title>Previsão do Tempo</title>
 
   <!-- shortcut icon -->
-  <link rel="shortcut icon" href="img\temperature.png">
+  <link rel="shortcut icon" href="img/temperature.png">
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -21,7 +21,7 @@
   <!-- Style -->
   <link rel="stylesheet" href="css/style.css">
   <!-- Angular -->
-  <script type="text/javascript" src="angular/angular.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.1/angular.min.js"></script>
   <!-- Modulos Angular -->
   <script type="text/javascript" src="angular/app.js"></script>
 
@@ -63,8 +63,15 @@
         <div class="col-md-12">
           <div class="box box-info" id="cidadeEstado"> <!-- Box Cidade e Estado -->
             <div class="box-header with-border">
+
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div><!-- /.box-tools -->
+
               <h5 class="box-title">Informe a cidade e estado</h5>
             </div><!-- /.box-header -->
+
 
             <div class="box-body" id="cidadeEstado" ng-init="carregaCidadeEstado()">
               <div class="row">
@@ -108,15 +115,20 @@
         <div class="col-md-12 col-sm6 col-xs-12">
 
           <div class="box box-info" id="diaSemana"><!--  Box dias da Semana -->
+
             <div class="box-header with-border">
+
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div><!-- /.box-tools -->
+
               <h5 class="box-title">Dias da Semana</h5>
             </div>
 
             <div class="box-body" id="diaSemana"><!-- Hoje -->
               <div class="row">
                 <div class="col-md-4 col-sm6 col-xs-12">
-
-
 
                   <div class="box box-widget widget-user">
                     <div class="widget-user-header bg-aqua-active">
@@ -284,9 +296,16 @@
 
         <div class="col-md-4 col-sm6 col-xs-12"><!-- Box Recomendações -->
           <div class="box box-info" id="cidadeEstado">
+
             <div class="box-header with-border">
               <h5 class="box-title">Dias com temperatura</h5>
-              <h6>Máxima e Mínima</h6>
+              <h4>Máxima e Mínima</h4>
+
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div><!-- /.box-tools -->
+
             </div><!-- /.box-header -->
             <div class="box-body" id="cidadeEstado">
               <!-- Máximo -->
@@ -324,20 +343,30 @@
           <div class="box box-info" id="cidadeEstado">
             <div class="box-header with-border">
               <h5 class="box-title">Recomendações</h5>
+
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div><!-- /.box-tools -->
+
             </div><!-- /.box-header -->
             <div class="box-body">
               <!-- Recomendação positivo -->
               <div ng-show="recomendacaoPositivo">
                 <h4>Recomendação de praia positiva.</h4>
                 <h5>A temperatura do final de semana está acima de 25 º</h5>
-                <img class="img-circle" src="img/positivo.jpg" />
+                <center>
+                  <img class="img-circle" src="img/positivo.jpg" />
+                </center>
               </div>
               <!-- Recomendação Negativo -->
               <div ng-show="recomendacaoNegativo">
                 <h4>Recomendação de praia negativa</h4>
                 <h5>A temperatura do final de semana está abaixo de 25 º</h5>
                 <div class="widget-user-image">
-                  <img class="img-circle" src="img/negativo.jpg" />
+                  <center>
+                    <img class="img-circle" src="img/negativo.jpg" />
+                  </center>
                 </div>
               </div>
               <!-- Sem recomendação -->
@@ -345,7 +374,9 @@
                 <h4>Recomendação de praia negativa</h4>
                 <h5>Não houve final de semana nos próximos dias</h5>
                 <div class="widget-user-image">
-                  <img class="img-circle" src="img/semprevisao.png" />
+                  <center>
+                    <img class="img-circle" src="img/semprevisao.png" />
+                  </center>
                 </div>
               </div>
 
@@ -362,6 +393,12 @@
           <div class="box box-info" id="cidadeEstado">
             <div class="box-header with-border">
               <h5 class="box-title">Gráfico de variação de Temperatura</h5>
+
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div><!-- /.box-tools -->
+
             </div><!-- /.box-header -->
             <div class="box-body">
               <div class="chart">
