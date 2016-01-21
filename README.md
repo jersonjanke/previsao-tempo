@@ -14,7 +14,7 @@ Para carregar os estados e cidades foi utilizado um javascript que trata de carr
 
 ![alt tag](img/gitHub/1 - cidadesEstados.png "2 – Funcionalidades")
 
-<h3>2.2 – Realizar consulta</h3>
+<h3>2.2 – Realizar consulta</h3><br />
 
 Para consultar os dados previsão do tempo foi utilizada um API que retorna um json(javascript object notation) com os dados da previsão. API utilizada foi http://developers.agenciaideias.com.br. Nesta API é necessário passar cidade e estado para receber o retorno em json.
 
