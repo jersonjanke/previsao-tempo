@@ -48,7 +48,7 @@ Por fim foi uma experiência muito interessante participar desse projeto onde ti
 
 ##5 – Referencias 
 
-AdminLte: https://almsaeedstudio.com
+AdminLte: https://almsaeedstudio.com<br />
 AngularJS: https://angularjs.org/
 
 
