@@ -1,4 +1,4 @@
-## Pyechonest
+## Protótipo Previsão do Tempo
 
 Tap into [The Echo Nest's](http://the.echonest.com/) Musical Brain for the best music search, information, recommendations and remix tools on the web.
 
@@ -8,14 +8,14 @@ Pyechonest is an open source Python library for the Echo Nest API.  With Pyechon
 * **song** - search songs by artist, title, description, or attribute (tempo, duration, etc) and get detailed information back about each song, such as hotttnesss, audio_summary, or tracks.
 * **track** - upload a track to the Echo Nest and receive summary information about the track including key, duration, mode, tempo, time signature along with detailed track info including timbre, pitch, rhythm and loudness information.
 
-## Install
+## 1 – Objetivo
 There are a few different ways you can install pyechonest:
 
 * Use setuptools: `easy_install -U pyechonest`
 * Download the zipfile from the [releases](https://github.com/echonest/pyechonest/releases) page and install it. 
 * Checkout the source: `git clone git://github.com/echonest/pyechonest.git` and install it yourself.
    
-## Getting Started
+## 2 – Funcionalidades
 * Install Pyechonest
 * **Get an API key** - to use the Echo Nest API you need an Echo Nest API key.  You can get one for free at [developer.echonest.com](http://developer.echonest.com).
 * **Set the API** key - you can do this one of two ways:
@@ -29,7 +29,7 @@ There are a few different ways you can install pyechonest:
 
 * Check out the [docs](http://echonest.github.com/pyechonest/) and examples below.
 
-## Examples
+## 2.1 – Selecionar estado e cidades
 *All examples assume you have already setup your api key!*
 
 Find artists that are similar to 'Bikini Kill':
@@ -41,6 +41,12 @@ print "Artists similar to: %s:" % (bk.name,)
 for similar_artist in bk.similar: print "\t%s" % (similar_artist.name,)
 ```
 
+##2.2 – Realizar consulta
+
+##2.3 – Salvar favorito
+
+
+##4 – Conclusão
 Search for artist:
 ```python
 from pyechonest import artist
