@@ -32,7 +32,7 @@
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition skin-blue layout-top-nav" ng-app="myTemp">
+<body class="hold-transition skin-blue layout-top-nav" ng-app="minhaPrevisao">
   <!-- Cabeçalho -->
   <div class="wrapper">
     <div class="main-header">
@@ -394,15 +394,16 @@
 
         <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
-            <div class="modal-content" id="fundoMsg">
-              <div class="modal-header">
+            <div class="modal-content">
+              <div class="modal-header fundoMsg">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="tituloPrevisaoMsg"><strong>Previsão do Tempo<strong></h4>
               </div>
-              <div class="modal-body">
-                  <h3>{{msg}}</h3>
+              <div class="modal-body colorMsg">
+                <h5>{{msg}}</h5>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-ok" data-dismiss="modal">OK</button>
+              <div class="modal-footer fundoMsg">
+                <button type="button" class="btn btn-ok btn-success" data-dismiss="modal">OK</button>
               </div>
             </div>
           </div>

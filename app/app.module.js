@@ -5,7 +5,7 @@
 * Programador: Jerson Janke
 * GitHub: https://github.com/jersonjanke/previsao-tempo
 */
-var app = angular.module("myTemp", []);
+var app = angular.module("minhaPrevisao", []);
 
 //Verifica se tem favorito salvo
 if ((localStorage.estadoCache == undefined ) || (localStorage.cidadeCache == undefined )){
@@ -31,7 +31,7 @@ app.controller("myCtrlTemp", function($scope, $http){
   //Nova consulta de previssão
   $scope.consultaPrevisao = function(){
     if(($scope.cidade == undefined)||($scope.estado == undefined)){
-      $scope.msg = "Informe cidade e estado";
+      $scope.msg = "Informe a cidade e estado para consultar a previsão do tempo.";
       $('#myModal').modal('show');
     }
     else{
@@ -194,7 +194,7 @@ app.controller("myCtrlTemp", function($scope, $http){
   // Salvar Favoritos
   $scope.salvaFavorito = function(cid,est){
     if((cid == undefined) || (est == undefined)){
-      $scope.msg = "Informar Cidade e Estado para salvar favorito.";
+      $scope.msg = "Informar a cidade e estado para salvar favorito.";
       $('#myModal').modal('show');
     }
     else{
