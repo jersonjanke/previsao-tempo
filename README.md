@@ -37,6 +37,10 @@ Método para salvar favorito:
 
 **AdminLte:** Contém vários ícones, botões e classes que foram utilizadas para a montagem dos Boxs e do gráfico. Utilizado também para criação do HTML5, CSS3, Design responsivo e Bootstrap 3.
 
+<<<<<<< HEAD
 **AngularJS:** Utilizado o framework para o desenvolvimento da parte lógica do fronte-end, na requisição do json do API com dados da temperatura, na criação de métodos para auxiliar o desenvolvimento. Utilizado várias diretivas do AngularJS no front-end principalmente para fazer o Bind dos dados no front-end.
+=======
+**AngularJS:** Utilizado o framework para o desenvolvimento da parte lógica do fronte-end, na requisição do json do API com dados da temperatura, na criação de métodos para auxiliar o desenvolvimento. Utilizado várias diretivas do AngularJS no front-end principalmente para fazer o Bind dos dados no front-end. 
+>>>>>>> origin/master
 
 ##4 – Conclusão
