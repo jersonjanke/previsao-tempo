@@ -86,17 +86,19 @@
 
                   <!-- Botões -->
                   <div class="col-md-4 col-sm6 col-xs-12">
-                    <!-- Botão Consultar -->
-                    <a class="btn btn-app" ng-click="consultaPrevisao()">
-                      <i class="glyphicon glyphicon-search"></i>
-                      Consultar
-                    </a>
+                    <center><div class="button">
+                      <!-- Botão Consultar -->
+                      <a class="btn btn-app" ng-click="consultaPrevisao()">
+                        <i class="glyphicon glyphicon-search"></i>
+                        Consultar
+                      </a>
 
-                    <!-- Botão favoritos     -->
-                     <a class="btn btn-app" ng-click="salvaFavorito(cidade,estado)">
-                       <i class="glyphicon glyphicon-star-empty"></i>
-                       Favorito
-                     </a>
+                      <!-- Botão favoritos     -->
+                      <a class="btn btn-app" ng-click="salvaFavorito(cidade,estado)">
+                        <i class="glyphicon glyphicon-star-empty"></i>
+                        Favorito
+                      </a>
+                    </div></center>
                   </div>
                 </div>
               </div>
@@ -130,14 +132,14 @@
                         <div class="row">
                           <div class="col-sm-6 border-right">
                             <div class="description-block" >
-                              <h5 class="description-header">Máxima</h5>
-                              <span ng-bind="myData.previsoes[0].temperatura_max +' °'" class="description-text"></span>
+                              <h5 class="description-header">Mínima</h5>
+                              <span ng-bind="myData.previsoes[0].temperatura_min +' °'" class="description-text"></span>
                             </div><!-- /.description-block -->
                           </div><!-- /.col -->
                           <div class="col-sm-6 border-right">
                             <div class="description-block">
-                              <h5 class="description-header">Mínima</h5>
-                              <span ng-bind="myData.previsoes[0].temperatura_min +' °'" class="description-text"></span>
+                              <h5 class="description-header">Máxima</h5>
+                              <span ng-bind="myData.previsoes[0].temperatura_max +' °'" class="description-text"></span>
                             </div><!-- /.description-block -->
                           </div><!-- /.col -->
                         </div><!-- /.row -->
@@ -161,14 +163,14 @@
                         <div class="row">
                           <div class="col-sm-6 border-right">
                             <div class="description-block">
-                              <h5 class="description-header">Máxima</h5>
-                              <span ng-bind="myData.previsoes[1].temperatura_max +' °'" class="description-text"></span>
+                              <h5 class="description-header">Mínima</h5>
+                              <span ng-bind="myData.previsoes[1].temperatura_min +' °'" class="description-text"></span>
                             </div><!-- /.description-block -->
                           </div><!-- /.col -->
                           <div class="col-sm-6 border-right">
                             <div class="description-block">
-                              <h5 class="description-header">Mínima</h5>
-                              <span ng-bind="myData.previsoes[1].temperatura_min +' °'" class="description-text"></span>
+                              <h5 class="description-header">Máxima</h5>
+                              <span ng-bind="myData.previsoes[1].temperatura_max +' °'" class="description-text"></span>
                             </div><!-- /.description-block -->
                           </div><!-- /.col -->
                         </div><!-- /.row -->
@@ -193,14 +195,14 @@
                         <div class="row">
                           <div class="col-sm-6 border-right">
                             <div class="description-block">
-                              <h5 class="description-header">Máxima</h5>
-                              <span ng-bind="myData.previsoes[2].temperatura_max +' °'" class="description-text"></span>
+                              <h5 class="description-header">Mínima</h5>
+                              <span ng-bind="myData.previsoes[2].temperatura_min +' °'" class="description-text"></span>
                             </div><!-- /.description-block -->
                           </div><!-- /.col -->
                           <div class="col-sm-6 border-right">
                             <div class="description-block">
-                              <h5 class="description-header">Mínima</h5>
-                              <span ng-bind="myData.previsoes[2].temperatura_min +' °'" class="description-text"></span>
+                              <h5 class="description-header">Máxima</h5>
+                              <span ng-bind="myData.previsoes[2].temperatura_max +' °'" class="description-text"></span>
                             </div><!-- /.description-block -->
                           </div><!-- /.col -->
                         </div><!-- /.row -->
@@ -225,14 +227,14 @@
                         <div class="row">
                           <div class="col-sm-6 border-right">
                             <div class="description-block">
-                              <h5 class="description-header">Máxima</h5>
-                              <span ng-bind="myData.previsoes[3].temperatura_max +' °'" class="description-text"></span>
+                              <h5 class="description-header">Mínima</h5>
+                              <span ng-bind="myData.previsoes[3].temperatura_min +' °'" class="description-text"></span>
                             </div><!-- /.description-block -->
                           </div><!-- /.col -->
                           <div class="col-sm-6 border-right">
                             <div class="description-block">
-                              <h5 class="description-header">Mínima</h5>
-                              <span ng-bind="myData.previsoes[3].temperatura_min +' °'" class="description-text"></span>
+                              <h5 class="description-header">Máxima</h5>
+                              <span ng-bind="myData.previsoes[3].temperatura_max +' °'" class="description-text"></span>
                             </div><!-- /.description-block -->
                           </div><!-- /.col -->
                         </div><!-- /.row -->
@@ -257,14 +259,14 @@
                         <div class="row">
                           <div class="col-sm-6 border-right">
                             <div class="description-block">
-                              <h5 class="description-header">Máxima</h5>
-                              <span ng-bind="myData.previsoes[4].temperatura_max +' °'" class="description-text"></span>
+                              <h5 class="description-header">Mínima</h5>
+                              <span ng-bind="myData.previsoes[4].temperatura_min +' °'" class="description-text"></span>
                             </div><!-- /.description-block -->
                           </div><!-- /.col -->
                           <div class="col-sm-6 border-right">
                             <div class="description-block">
-                              <h5 class="description-header">Mínima</h5>
-                              <span ng-bind="myData.previsoes[4].temperatura_min +' °'" class="description-text"></span>
+                              <h5 class="description-header">Máxima</h5>
+                              <span ng-bind="myData.previsoes[4].temperatura_max +' °'" class="description-text"></span>
                             </div><!-- /.description-block -->
                           </div><!-- /.col -->
                         </div><!-- /.row -->
@@ -297,7 +299,7 @@
                     <i class="fa fa-fw fa-arrow-up"></i>
                   </span>
                   <div class="info-box-content">
-                    <span class="info-box-text"><strong>Máximo</strong></span>
+                    <span class="info-box-text"><strong>Máxima</strong></span>
                     <span class="info-box-text">{{max +' º'}}</span>
                     <span class="info-box-text"><strong>Data</strong></span>
                     <span class="info-box-text">{{dtMax}}</span>
@@ -309,7 +311,7 @@
                     <i class="fa fa-fw fa-arrow-down"></i>
                   </span>
                   <div class="info-box-content">
-                    <span class="info-box-text"><strong>Mínimo</strong></span>
+                    <span class="info-box-text"><strong>Mínima</strong></span>
                     <span class="info-box-text">{{min +' º'}}</span>
                     <span class="info-box-text"><strong>Data</strong></span>
                     <span class="info-box-text">{{dtMin}}</span>

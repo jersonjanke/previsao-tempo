@@ -29,10 +29,12 @@ app.controller("myCtrlTemp", function($scope, $http){
   //**** METODO ****
   //Nova consulta de previssão
   $scope.consultaPrevisao = function(){
-    var cid = $scope.cidade;
-    var est = $scope.estado;
-    $scope.carregaDados(cid,est);
-    $scope.carregando = false;
+    if(($scope.cidade == undefined)||($scope.estado == undefined))
+    alert("Informe cidade e estado");
+    else{
+      $scope.carregaDados( $scope.cidade,$scope.estado);
+      $scope.carregando = false;
+    }
   }
 
   //**** METODO ****
@@ -79,121 +81,24 @@ app.controller("myCtrlTemp", function($scope, $http){
   // no proximos dias terá final de semnana e temperatura for > 25
   $scope.recomendacoes = function($scope, lista){
 
-    // Data
-    var data2 = lista[3].data;
-    var data3 = lista[4].data;
-    var data4 = lista[5].data;
-    var data5 = lista[6].data;
-    // Dias
-    var dia2 = "";
-    var dia3 = "";
-    var dia4 = "";
-    var dia5 = "";
-    //Temperatura Máxima para o final de semana
-    var temperaturaMax2 = lista[3].temperatura_max;
-    var temperaturaMax3 = lista[4].temperatura_max;
-    var temperaturaMax4 = lista[5].temperatura_max;
-    var temperaturaMax5 = lista[6].temperatura_max;
-
-    // Flag controla se houve final de semana
-    var finalSemana = false;
-
     //Limpa variavesi
     $scope.recomendacaoPositivo = "";
     $scope.recomendacaoNegativo = "";
 
-    // Copia dia da Semana
-    dia2 = $scope.copiaDiaSemana(data2);
-    dia3 = $scope.copiaDiaSemana(data3);
-    dia4 = $scope.copiaDiaSemana(data4);
-    dia5 = $scope.copiaDiaSemana(data5);
+    for (var i = 3; i < 6; i++) {
+      var dia = "";
+      var temperatura = 0;
 
-    // Verifica Sábado
-    if(dia2 == 'Sábado'){
-      if(temperaturaMax2 >= 25){
-        $scope.recomendacaoPositivo = true;
-        finalSemana = true;
-      }
-      else{
-        $scope.recomendacaoNegativo = true;
-        finalSemana = true;
-      }
-    }
+      dia = lista[i].data;
+      dia = $scope.copiaDiaSemana(dia);
 
-    if(dia3 == 'Sábado'){
-      if(temperaturaMax3 >= 25){
-        $scope.recomendacaoPositivo = true;
-        finalSemana = true;
-      }
-      else{
-        $scope.recomendacaoNegativo = true;
-        finalSemana = true;
-      }
-    }
-
-    if(dia4 == 'Sábado'){
-      if(temperaturaMax4 >= 25){
-        $scope.recomendacaoPositivo = true;
-        finalSemana = true;
-      }
-      else{
-        $scope.recomendacaoNegativo = true;
-        finalSemana = true;
-      }
-    }
-
-    if(dia5 == 'Sábado'){
-      if(temperaturaMax5 >= 25){
-        $scope.recomendacaoPositivo = true;
-        finalSemana = true;
-      } else {
-        $scope.recomendacaoNegativo = true;
-        finalSemana = true;
-      }
-    }
-
-    // Verifica Dómingo
-    // Verifica Dómingo
-    if(finalSemana == false){
-      if(dia2 == 'Domingo'){
-        if(temperaturaMax2 >= 25){
+      if(dia == "Sábado"){
+        temperatura = lista[i].temperatura_max;
+        console.log(temperatura);
+        if(temperatura >= 25){
           $scope.recomendacaoPositivo = true;
           finalSemana = true;
-        }
-        else{
-          $scope.recomendacaoNegativo = true;
-          finalSemana = true;
-        }
-      }
-
-      if(dia3 == 'Domingo'){
-        if(temperaturaMax3 >= 25){
-          $scope.recomendacaoPositivo = true;
-          finalSemana = true;
-        }
-        else{
-          $scope.recomendacaoNegativo = true;
-          finalSemana = true;
-        }
-      }
-
-      if(dia4 == 'Domingo'){
-        if(temperaturaMax4 >= 25){
-          $scope.recomendacaoPositivo = true;
-          finalSemana = true;
-        }
-        else{
-          $scope.recomendacaoNegativo = true;
-          finalSemana = true;
-        }
-      }
-
-      if(dia5 == 'Domingo'){
-        if(temperaturaMax5 >= 25){
-          $scope.recomendacaoPositivo = true;
-          finalSemana = true;
-        }
-        else{
+        } else {
           $scope.recomendacaoNegativo = true;
           finalSemana = true;
         }
@@ -209,25 +114,11 @@ app.controller("myCtrlTemp", function($scope, $http){
   //**** METODO ****
   //Carrega Gráfico
   $scope.carregaGrafico = function($scope, lista){
-    //Carrega dados da lista
-    var data1 = lista[2].data;
-    var data2 = lista[3].data;
-    var data2 = lista[3].data;
-    var data3 = lista[4].data;
-    var data4 = lista[5].data;
-    var data5 = lista[6].data;
-    // Copia somente o nome da semana
-    var dia1 = $scope.copiaDiaSemana(data1);
-    var dia2 = $scope.copiaDiaSemana(data2);
-    var dia3 = $scope.copiaDiaSemana(data3);
-    var dia4 = $scope.copiaDiaSemana(data4);
-    var dia5 = $scope.copiaDiaSemana(data5);
-
     var areaChartCanvas = $("#areaChart").get(0).getContext("2d");
     var areaChart = new Chart(areaChartCanvas);
 
     var areaChartData = {
-      labels: [dia1, dia2,dia3, dia4, dia5],
+      labels: [$scope.copiaDiaSemana(lista[2].data), $scope.copiaDiaSemana(lista[3].data),$scope.copiaDiaSemana(lista[4].data), $scope.copiaDiaSemana(lista[5].data), $scope.copiaDiaSemana(lista[6].data)],
       datasets: [
         {
           label: "Electronics",
