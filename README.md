@@ -12,7 +12,7 @@ Objetivo deste protótipo realizar consulta da previsão do tempo com base na ci
 
 Para carregar os estados e cidades foi utilizado um javascript que trata de carregar os dados de estado e cidade, javascript: cidades-estados-1.4-utf8.js. Para utilizar foi criado um <select> no HTML com ID de estado e cidade.
 
-![alt tag](img/gitHub/1 - cidadesEstados.png "2 – Funcionalidades")
+
 
 ##2.2 – Realizar consulta
 
@@ -20,7 +20,7 @@ Para consultar os dados previsão do tempo foi utilizada um API que retorna um j
 
 Método que para carregar dados da API concatenando cidade e estado selecionado pela interface.
 
-![alt tag](img/gitHub/2 - consultaCidadesEstados.png "2.2 – Realizar consulta")
+
 
 ##2.3 – Salvar favorito
 
@@ -30,6 +30,6 @@ Método utilizado para salvar favoritos: Ao clicar no botão de favoritos salvar
 
 Método para salvar favorito:
 
-![alt tag](img/gitHub/4 - favorito.png "2.3 – Salvar favorito")
+
 
 ##3 – Conclusão
