@@ -8,9 +8,10 @@ Objetivo deste protótipo realizar consulta da previsão do tempo com base na ci
 
 ##2.1 – Selecionar estado e cidades
 
-Para carregar os estados e cidades foi utilizado um javascript que trata de carregar os dados de estado e cidade, javascript. Para utilizar foi criado um <select> no HTML com ID de estado e cidade.
-
 ##2.2 – Realizar consulta
+
+Para consultar os dados previsão do tempo foi utilizada um API que retorna um json(javascript object notation) com os dados da previsão. API utilizada foi http://developers.agenciaideias.com.br. Nesta API é necessário passar cidade e estado para receber o retorno em json.
+
 
 ##2.3 – Salvar favorito
 
