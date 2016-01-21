@@ -1,19 +1,11 @@
 ## Protótipo Previsão do Tempo
 
-Tap into [The Echo Nest's](http://the.echonest.com/) Musical Brain for the best music search, information, recommendations and remix tools on the web.
-
-Pyechonest is an open source Python library for the Echo Nest API.  With Pyechonest you have Python access to the entire set of API methods including:
-
-* **artist** - search for artists by name, description, or attribute, and get back detailed information about any artist including audio, similar artists, blogs, familiarity, hotttnesss, news, reviews, urls and video.
-* **song** - search songs by artist, title, description, or attribute (tempo, duration, etc) and get detailed information back about each song, such as hotttnesss, audio_summary, or tracks.
-* **track** - upload a track to the Echo Nest and receive summary information about the track including key, duration, mode, tempo, time signature along with detailed track info including timbre, pitch, rhythm and loudness information.
-
 ## 1 – Objetivo
 There are a few different ways you can install pyechonest:
 
-* Use setuptools: `easy_install -U pyechonest`
-* Download the zipfile from the [releases](https://github.com/echonest/pyechonest/releases) page and install it. 
-* Checkout the source: `git clone git://github.com/echonest/pyechonest.git` and install it yourself.
+Objetivo deste protótipo realizar consulta da previsão do tempo com base na cidade e estado selecionada. Exibir a máxima e mínima do dia atual e dias seguintes da semana. Box de consulta de estado e cidade aonde será necessário selecionar um estado e cidade. Ao acessar pela primeira vez a cidade e estado padrão será Blumenau – Santa Catariana. Box temperatura que será exibida a temperatura máxima e mínima da semana. Box recomendações que verificará que no sábado a temperatura é maior que 25 ° mostrará recomendação de praia positivo caso contrário negativará a recomendação de praia. Box do gráfico de variação de temperatura da semana, exibirá um gráfico linear com máximas e mínimas dos dias exibidos.
+
+![alt tag](img/gitHub/3 - fullproject.jpg "1 – Objetivo")
    
 ## 2 – Funcionalidades
 * Install Pyechonest
