@@ -40,3 +40,15 @@ Método para salvar favorito:
 **AngularJS:** o framework foi utilizado para o desenvolvimento da parte lógica do fronte-end, na requisição do json do API com dados da previsão, na criação de métodos para auxiliar o desenvolvimento. Além disso, foi utilizado várias de suas diretivas principalmente para fazer o Bind dos dados no front-end.
 
 ##4 – Conclusão
+
+A elaboração do Protótipo de Previsão do tempo foi bem gratificante por proporcionar um contato maior com ferramentas novas.
+Ao trabalhar com o AdminLte pude perceber que o design da página, onde poderia ter despendido tempo desnecessário para criação, se tornou muito mais simples e objetivo por conter várias classes já preparadas, proporcionando assim um tempo maior para a elaboração da parte lógica e funcional.
+Como mencionado o protótipo me proporcionou a oportunidade de trabalhar com o ArgularJS, um framework que já havia pesquisado mas até então nunca havia tido um contato maior. Pude notar que é a adaptação ao framework é rápida e que já se encontra disponível vários matérias onde praticamente todas as dúvidas pertinentes foram esclarecidas.
+Por fim foi uma experiência muito interessante participar desse projeto onde tive a possibilidade de trabalhar com duas frameworks novas.
+
+##5 – Referencias 
+
+AdminLte: https://almsaeedstudio.com
+AngularJS: https://angularjs.org/
+
+
