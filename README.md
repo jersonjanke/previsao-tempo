@@ -19,4 +19,12 @@ Método que para carregar dados da API concatenando cidade e estado selecionado 
 
 ##2.3 – Salvar favorito
 
-##4 – Conclusão
+Ao selecionar cidade e estado poderá salvá-las como favorito, assim que abrir a página novamente já carregará os dados referente a cidades-estados salvos como favorito.
+
+Método utilizado para salvar favoritos: Ao clicar no botão de favoritos salvará estado e cidade no localStorage, ao acessar novamente a página será verificado se existem dados salvos no localStorage  e carregar a previsão com base na cidades-estados favorito.
+
+Método para salvar favorito:
+
+![alt tag](img/gitHub/4 - favorito.png "2.3 – Salvar favorito")
+
+##3 – Conclusão
