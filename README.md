@@ -14,7 +14,7 @@ Para carregar os estados e cidades foi utilizado um javascript que trata de carr
 
 ![alt tag](img/gitHub/1 - cidadesEstados.png "2 – Funcionalidades")
 
-<h3>2.2 – Realizar consulta</h3><br />
+<h2>2.2 – Realizar consulta</h2>
 
 Para consultar os dados previsão do tempo foi utilizada um API que retorna um json(javascript object notation) com os dados da previsão. API utilizada foi http://developers.agenciaideias.com.br. Nesta API é necessário passar cidade e estado para receber o retorno em json.
 
@@ -22,7 +22,7 @@ Método que para carregar dados da API concatenando cidade e estado selecionado 
 
 ![alt tag](img/gitHub/2 - consultaCidadesEstados.png "2.2 – Realizar consulta")
 
-<h3>2.3 – Salvar favorito</h3>
+<h2>2.3 – Salvar favorito</h2>
 
 Ao selecionar cidade e estado poderá salvá-las como favorito, assim que abrir a página novamente já carregará os dados referente a cidades-estados salvos como favorito.
 
@@ -32,4 +32,4 @@ Método para salvar favorito:
 
 ![alt tag](img/gitHub/4 - favorito.png "2.3 – Salvar favorito")
 
-<h2>4 – Conclusão</h2>
+<h1>4 – Conclusão</h1>
