@@ -23,14 +23,17 @@ app.controller("myCtrlTemp", function($scope, $http){
   success(function(response){
     $scope.carregaPrevisao(response,cidade,estado);
   }).error(function(response){
-    alert("Não existem previsão do tempo para está cidade e estado");
+    $scope.msg = "Não existem previsão do tempo para está cidade e estado";
+    $('#myModal').modal('show');
   });
 
   //**** METODO ****
   //Nova consulta de previssão
   $scope.consultaPrevisao = function(){
-    if(($scope.cidade == undefined)||($scope.estado == undefined))
-    alert("Informe cidade e estado");
+    if(($scope.cidade == undefined)||($scope.estado == undefined)){
+      $scope.msg = "Informe cidade e estado";
+      $('#myModal').modal('show');
+    }
     else{
       $scope.carregaDados( $scope.cidade,$scope.estado);
       $scope.carregando = false;
@@ -44,7 +47,8 @@ app.controller("myCtrlTemp", function($scope, $http){
     success(function(response){
       $scope.carregaPrevisao(response,cidade,estado);
     }).error(function(response){
-      alert("Não existem previsão do tempo para está cidade e estado");
+      $scope.msg = "Não existem previsão do tempo para está cidade e estado";
+      $('#myModal').modal('show');
       $scope.carregaDados("Blumenau","SC");
     });
   }
@@ -190,12 +194,14 @@ app.controller("myCtrlTemp", function($scope, $http){
   // Salvar Favoritos
   $scope.salvaFavorito = function(cid,est){
     if((cid == undefined) || (est == undefined)){
-      alert("Informar Cidade e Estado para salvar favorito.");
+      $scope.msg = "Informar Cidade e Estado para salvar favorito.";
+      $('#myModal').modal('show');
     }
     else{
       localStorage.cidadeCache = cid;
       localStorage.estadoCache = est;
-      alert('Favorito salvo com sucesso.');
+      $scope.msg = 'Favorito salvo com sucesso.';
+      $('#myModal').modal('show');
     }
   }
 
