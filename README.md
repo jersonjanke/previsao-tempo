@@ -8,6 +8,8 @@ Objetivo deste protótipo realizar consulta da previsão do tempo com base na ci
 
 ##2.1 – Selecionar estado e cidades
 
+Para carregar os estados e cidades foi utilizado um javascript que trata de carregar os dados de estado e cidade.
+
 ![alt tag](img/gitHub/1 - cidadesEstados.png "2 – Funcionalidades")
 
 ##2.2 – Realizar consulta
