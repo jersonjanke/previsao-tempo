@@ -12,6 +12,10 @@ Objetivo deste protótipo realizar consulta da previsão do tempo com base na ci
 
 Para consultar os dados previsão do tempo foi utilizada um API que retorna um json(javascript object notation) com os dados da previsão. API utilizada foi http://developers.agenciaideias.com.br. Nesta API é necessário passar cidade e estado para receber o retorno em json.
 
+Método que para carregar dados da API concatenando cidade e estado selecionado pela interface.
+
+![alt tag](img/gitHub/2 - consultaCidadesEstados.png "2.2 – Realizar consulta")
+
 
 ##2.3 – Salvar favorito
 
