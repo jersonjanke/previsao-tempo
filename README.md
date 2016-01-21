@@ -1,35 +1,92 @@
-# Protótipo Previsão do Tempo #
+## Pyechonest
 
-<h2>1 – Objetivo</h2>
+Tap into [The Echo Nest's](http://the.echonest.com/) Musical Brain for the best music search, information, recommendations and remix tools on the web.
 
-Objetivo deste protótipo realizar consulta da previsão do tempo com base na cidade e estado selecionada. Exibir a máxima e mínima do dia atual e dias seguintes da semana. Box de consulta de estado e cidade aonde será necessário selecionar um estado e cidade. Ao acessar pela primeira vez a cidade e estado padrão será Blumenau – Santa Catariana. Box temperatura que será exibida a temperatura máxima e mínima da semana. Box recomendações que verificará que no sábado a temperatura é maior que 25 ° mostrará recomendação de praia positivo caso contrário negativará a recomendação de praia. Box do gráfico de variação de temperatura da semana, exibirá um gráfico linear com máximas e mínimas dos dias exibidos.
+Pyechonest is an open source Python library for the Echo Nest API.  With Pyechonest you have Python access to the entire set of API methods including:
 
-![alt tag](img/gitHub/3 - fullproject.jpg "1 – Objetivo")
+* **artist** - search for artists by name, description, or attribute, and get back detailed information about any artist including audio, similar artists, blogs, familiarity, hotttnesss, news, reviews, urls and video.
+* **song** - search songs by artist, title, description, or attribute (tempo, duration, etc) and get detailed information back about each song, such as hotttnesss, audio_summary, or tracks.
+* **track** - upload a track to the Echo Nest and receive summary information about the track including key, duration, mode, tempo, time signature along with detailed track info including timbre, pitch, rhythm and loudness information.
 
-#2 – Funcionalidades#
+## Install
+There are a few different ways you can install pyechonest:
 
-#2.1 – Selecionar estado e cidades
+* Use setuptools: `easy_install -U pyechonest`
+* Download the zipfile from the [releases](https://github.com/echonest/pyechonest/releases) page and install it. 
+* Checkout the source: `git clone git://github.com/echonest/pyechonest.git` and install it yourself.
+   
+## Getting Started
+* Install Pyechonest
+* **Get an API key** - to use the Echo Nest API you need an Echo Nest API key.  You can get one for free at [developer.echonest.com](http://developer.echonest.com).
+* **Set the API** key - you can do this one of two ways:
+* set an environment variable named `ECHO_NEST_API_KEY` to your API key
+* Include this snippet of code at the beginning of your python scripts:
 
-Para carregar os estados e cidades foi utilizado um javascript que trata de carregar os dados de estado e cidade, javascript: cidades-estados-1.4-utf8.js. Para utilizar foi criado um <select> no HTML com ID de estado e cidade.
+```python
+    from pyechonest import config
+    config.ECHO_NEST_API_KEY="YOUR API KEY"
+```
 
-![alt tag](img/gitHub/1 - cidadesEstados.png "2 – Funcionalidades")
+* Check out the [docs](http://echonest.github.com/pyechonest/) and examples below.
 
-#2.2 – Realizar consulta
+## Examples
+*All examples assume you have already setup your api key!*
 
-Para consultar os dados previsão do tempo foi utilizada um API que retorna um json(javascript object notation) com os dados da previsão. API utilizada foi http://developers.agenciaideias.com.br. Nesta API é necessário passar cidade e estado para receber o retorno em json.
+Find artists that are similar to 'Bikini Kill':
 
-Método que para carregar dados da API concatenando cidade e estado selecionado pela interface.
+```python
+from pyechonest import artist
+bk = artist.Artist('bikini kill')
+print "Artists similar to: %s:" % (bk.name,)
+for similar_artist in bk.similar: print "\t%s" % (similar_artist.name,)
+```
 
-![alt tag](img/gitHub/2 - consultaCidadesEstados.png "2.2 – Realizar consulta")
+Search for artist:
+```python
+from pyechonest import artist
+weezer_results = artist.search(name='weezer')
+weezer = weezer_results[0]
+weezer_blogs = weezer.blogs
+print 'Blogs about weezer:', [blog.get('url') for blog in weezer_blogs]
+```
 
-#2.3 – Salvar favorito
+Get an artist by name:
+```python
+from pyechonest import artist
+a = artist.Artist('lady gaga')
+print a.id
+```
 
-Ao selecionar cidade e estado poderá salvá-las como favorito, assim que abrir a página novamente já carregará os dados referente a cidades-estados salvos como favorito.
+Get an artist by Musicbrainz ID:
+```python
+from pyechonest import artist
+a = artist.Artist('musicbrainz:artist:a74b1b7f-71a5-4011-9441-d0b5e4122711')
+print a.name
+```
 
-Método utilizado para salvar favoritos: Ao clicar no botão de favoritos salvará estado e cidade no localStorage, ao acessar novamente a página será verificado se existem dados salvos no localStorage  e carregar a previsão com base na cidades-estados favorito.
+Get the top hottt artists:
+```python
+from pyechonest import artist
+for hottt_artist in artist.top_hottt():
+print hottt_artist.name, hottt_artist.hotttnesss
+```
 
-Método para salvar favorito:
+Search for songs:
+```python
+from pyechonest import song
+rkp_results = song.search(artist='radiohead', title='karma police')
+karma_police = rkp_results[0]
+print karma_police.artist_location
+print 'tempo:',karma_police.audio_summary['tempo'],'duration:',karma_police.audio_summary['duration']
+```
 
-![alt tag](img/gitHub/4 - favorito.png "2.3 – Salvar favorito")
+Get a song's audio_url and analysis_url:
+```python
+from pyechonest import song
+ss_results = song.search(artist='the national', title='slow show', buckets=['id:7digital-US', 'tracks'], limit=True)
+slow_show = ss_results[0]
+ss_tracks = slow_show.get_tracks('7digital-US')
+print ss_tracks[0].get('preview_url')
+```
 
-#4 – Conclusão
+-![alt text](http://i.imgur.com/WWLYo.gif "Frustrated cat can't believe this is the 12th time he's clicked on an auto-linked README.md URL")
