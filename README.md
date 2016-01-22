@@ -2,7 +2,7 @@
 
 ## 1 – Objetivo
 
-Objetivo deste protótipo realizar consulta da previsão do tempo com base na cidade e estado selecionada. Exibir a máxima e mínima do dia atual e dias seguintes da semana. Box de consulta de estado e cidade aonde será necessário selecionar um estado e cidade. Ao acessar pela primeira vez a cidade e estado padrão será Blumenau – Santa Catariana. Box temperatura que será exibida a temperatura máxima e mínima da semana. Box recomendações que verificará que no sábado a temperatura é maior que 25 ° mostrará recomendação de praia positivo caso contrário negativará a recomendação de praia. Box do gráfico de variação de temperatura da semana, exibirá um gráfico linear com máximas e mínimas dos dias exibidos.
+Objetivo deste protótipo é realizar consulta da previsão do tempo com base na cidade e estado desejada pelo usuário. A página exibirá além da temperatura máxima e mínima do dia atual a previsão dos próximos 4 dias da semana. Onde a mesa será dividia em 5 box. Inciando pelo Box de consulta de Estado e Cidade, onde inicialmente o usuário selecionará o estado para selecionar posteriormente a cidade desejada. Ao acessar a página pela primeira vez trará a cidade e o estado padrão como “Blumenau – SC”, o usuário poderá escolher seu estado e sua cidade e salva-lá como favorito, assim toda vez que a página for acessada já trará sua cidade como padrão. O próximo Box apresenta os dias da semana com sua devida temperatura apresentando a máxima e a minima para cada dia da semana. Abaixo seguirá mais três Box, o Box Temperatura que consiste em apresentar a máxima e a mínima da semana, o Box recomendações que verificará se no sábado a temperatura for maior que 25 ° mostrará recomendação de praia positivo caso contrário negativará a recomendação de praia. E por último o Box do gráfico de variação de temperatura da semana, exibirá um gráfico linear com máximas e mínimas dos dias exibidos.
 
 ![alt tag](img/gitHub/3 - fullproject.jpg "1 – Objetivo")
 
@@ -10,7 +10,7 @@ Objetivo deste protótipo realizar consulta da previsão do tempo com base na ci
 
 ####2.1 – Selecionar estado e cidades
 
-Para carregar os estados e cidades foi utilizado um javascript que trata de carregar os dados de estado e cidade, javascript: cidades-estados-1.4-utf8.js. Para utilizar foi criado um select no HTML com ID de estado e cidade.
+Para carregar os estados e cidades foi utilizado um javascript que trata de carregar os dados de estado e cidade, javascript: cidades-estados-1.4-utf8.js. Para utilizar foi criado um '<select>' no HTML com ID de estado e cidade.
 
 ![alt tag](img/gitHub/1 - cidadesEstados.png "2 – Funcionalidades")
 
@@ -35,9 +35,9 @@ Método para salvar favorito:
 
 ##3 – Frameworks
 
-**AdminLte:** utilizado para criação do HTML5, CSS3, Design responsivo e Bootstrap 3. Utilizado para criação dos Boxes e o gráfico. Contém vários ícones, botões e classes que foram utilizadas.
+**AdminLte:** utilizado para criação do HTML5, CSS3, Design responsivo e Bootstrap 3.
 
-**AngularJS:** o framework foi utilizado para o desenvolvimento da parte lógica do fronte-end, na requisição do json do API com dados da previsão, na criação de métodos para auxiliar o desenvolvimento. Além disso, foi utilizado várias de suas diretivas principalmente para fazer o Bind dos dados no front-end.
+**AngularJS:** utilizado o framework para o desenvolvimento da parte lógica do fronte-end, na requisição do json do API com dados da previsão. Na criação de métodos para auxiliar o desenvolvimento. Utilizado várias diretivas do AngularJS no front-end principalmente para fazer o Bind dos dados
 
 ##4 – Conclusão
 
