@@ -37,7 +37,7 @@ Método para salvar favorito:
 
 **AdminLte:** utilizado para criação do HTML5, CSS3, Design responsivo e Bootstrap 3.
 
-**AngularJS:** utilizado o framework para o desenvolvimento da parte lógica do fronte-end, na requisição do json do API com dados da previsão. Na criação de métodos para auxiliar o desenvolvimento. Utilizado várias diretivas do AngularJS no front-end principalmente para fazer o Bind dos dados
+**AngularJS:** utilizado o framework para o desenvolvimento da parte lógica do front-end, na requisição do json do API com dados da previsão. Na criação de métodos para auxiliar o desenvolvimento. Utilizado várias diretivas do AngularJS no front-end principalmente para fazer o Bind dos dados
 
 ##4 – Conclusão
 
