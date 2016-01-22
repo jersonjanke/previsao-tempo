@@ -10,7 +10,7 @@ Objetivo deste protótipo é realizar consulta da previsão do tempo com base na
 
 ####2.1 – Selecionar estado e cidades
 
-Para carregar os estados e cidades foi utilizado um javascript que trata de carregar os dados de estado e cidade, javascript: cidades-estados-1.4-utf8.js. Para utilizar foi criado um '<select>' no HTML com ID de estado e cidade.
+Para carregar os estados e cidades foi utilizado um javascript que trata de carregar os dados de estado e cidade, javascript: cidades-estados-1.4-utf8.js. Para utilizar foi criado um "<select>" no HTML com ID de estado e cidade.
 
 ![alt tag](img/gitHub/1 - cidadesEstados.png "2 – Funcionalidades")
 
