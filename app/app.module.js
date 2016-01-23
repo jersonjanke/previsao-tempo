@@ -89,7 +89,7 @@ app.controller("myCtrlTemp", function($scope, $http){
     $scope.recomendacaoPositivo = "";
     $scope.recomendacaoNegativo = "";
 
-    for (var i = 3; i < 6; i++) {
+    for (var i = 2; i < 6; i++) {
       var dia = "";
       var temperatura = 0;
 
@@ -101,10 +101,10 @@ app.controller("myCtrlTemp", function($scope, $http){
         console.log(temperatura);
         if(temperatura >= 25){
           $scope.recomendacaoPositivo = true;
-          finalSemana = true;
+          $scope.finalSemana = true;
         } else {
           $scope.recomendacaoNegativo = true;
-          finalSemana = true;
+          $scope.finalSemana = true;
         }
       }
     }
