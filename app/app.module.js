@@ -89,7 +89,19 @@ app.controller("myCtrlTemp", function($scope, $http){
     $scope.recomendacaoPositivo = "";
     $scope.recomendacaoNegativo = "";
 
-    for (var i = 2; i < 6; i++) {
+    //Se dia atual for sábado
+    if ($scope.copiaDiaSemana((lista[2].data)) == 'Sábado'){
+      temperatura = lista[3].temperatura_max
+      if(temperatura >= 25){
+        $scope.recomendacaoPositivo = true;
+        $scope.finalSemana = true;
+      } else {
+        $scope.recomendacaoNegativo = true;
+        $scope.finalSemana = true;
+      }
+    }
+
+    for (var i = 3; i < 6; i++) {
       var dia = "";
       var temperatura = 0;
 
@@ -110,7 +122,7 @@ app.controller("myCtrlTemp", function($scope, $http){
     }
 
     //Se não houver final de semana exibe mensagem.
-    if(finalSemana == false){
+    if($scope.finalSemana == false){
       $scope.semFinal = true;
     }
   }
