@@ -46,7 +46,7 @@ Ao trabalhar com o AdminLte pude perceber que o design da página, onde poderia 
 Como mencionado o protótipo me proporcionou a oportunidade de trabalhar com o ArgularJS, um framework que já havia pesquisado mas até então nunca havia tido um contato maior. Pude notar que é a adaptação ao framework é rápida e que já se encontra disponível vários matérias onde praticamente todas as dúvidas pertinentes foram esclarecidas.
 Por fim foi uma experiência muito interessante participar desse projeto onde tive a possibilidade de trabalhar com duas frameworks novas.
 
-##5 – Referencias 
+##5 – Referências 
 
 AdminLte: https://almsaeedstudio.com<br />
 AngularJS: https://angularjs.org/
