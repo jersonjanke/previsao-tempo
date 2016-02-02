@@ -101,12 +101,13 @@ app.controller("myCtrlTemp", function($scope, $http){
       }
     }
 
-    for (var i = 3; i < 6; i++) {
+    for (var i = 3; i < 7; i++) {
       var dia = "";
       var temperatura = 0;
 
       dia = lista[i].data;
       dia = $scope.copiaDiaSemana(dia);
+      console.log(dia);
 
       if(dia == "Sábado"){
         temperatura = lista[i].temperatura_max;
