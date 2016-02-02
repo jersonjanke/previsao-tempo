@@ -49,7 +49,6 @@ app.controller("myCtrlTemp", function($scope, $http){
     }).error(function(response){
       $scope.msg = "Não existem previsão do tempo para está cidade e estado";
       $('#myModal').modal('show');
-      $scope.carregaDados("Blumenau","SC");
     });
   }
 
@@ -88,6 +87,7 @@ app.controller("myCtrlTemp", function($scope, $http){
     //Limpa variavesi
     $scope.recomendacaoPositivo = "";
     $scope.recomendacaoNegativo = "";
+    $scope.finalSemana = false;
 
     //Se dia atual for sábado
     if ($scope.copiaDiaSemana((lista[2].data)) == 'Sábado'){
