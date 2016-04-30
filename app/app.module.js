@@ -107,7 +107,6 @@ app.controller("myCtrlTemp", function($scope, $http){
 
       dia = lista[i].data;
       dia = $scope.copiaDiaSemana(dia);
-      console.log(dia);
 
       if(dia == "Sábado"){
         temperatura = lista[i].temperatura_max;
@@ -243,5 +242,10 @@ app.controller("myCtrlTemp", function($scope, $http){
     $scope.carregando = true;
     $scope.cidadeAtual = cidade;
     $scope.estadoAtual = estado;
+    $scope.imagem00 = $scope.myData.previsoes[0].imagem;
+    $scope.imagem01 = $scope.myData.previsoes[1].imagem;
+    $scope.imagem02 = $scope.myData.previsoes[2].imagem;
+    $scope.imagem03 = $scope.myData.previsoes[3].imagem;
+    $scope.imagem04 = $scope.myData.previsoes[4].imagem;
   }
 });
