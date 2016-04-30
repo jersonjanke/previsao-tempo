@@ -24,25 +24,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3927">
-              <caret line="384" column="34" selection-start-line="384" selection-start-column="34" selection-end-line="384" selection-end-column="34" />
+            <state relative-caret-position="5202">
+              <caret line="306" column="22" selection-start-line="306" selection-start-column="22" selection-end-line="306" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.module.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.module.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/app.module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="248" column="19" selection-start-line="248" selection-start-column="11" selection-end-line="248" selection-end-column="19" />
+            <state relative-caret-position="187">
+              <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <marker date="1462018733153" expanded="true" signature="6620:6645" placeholder="..." />
-                <marker date="1462018733153" expanded="true" signature="6682:6707" placeholder="..." />
+                <marker date="1462019380253" expanded="true" signature="7575:7600" placeholder="..." />
+                <marker date="1462019380253" expanded="true" signature="7637:7662" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -56,8 +56,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/app.module.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/app/app.module.js" />
       </list>
     </option>
   </component>
@@ -150,15 +150,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1462017714375</updated>
-      <workItem from="1462017715836" duration="1075000" />
+      <workItem from="1462017715836" duration="1696000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1075000" />
+    <option name="totallyTimeSpent" value="1696000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1696" height="1036" extended-state="6" />
+    <frame x="1358" y="-8" width="1696" height="1036" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2026538" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -187,23 +187,23 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/app.module.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="248" column="19" selection-start-line="248" selection-start-column="11" selection-end-line="248" selection-end-column="19" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1462018733153" expanded="true" signature="6620:6645" placeholder="..." />
-            <marker date="1462018733153" expanded="true" signature="6682:6707" placeholder="..." />
-          </folding>
+        <state relative-caret-position="5202">
+          <caret line="306" column="22" selection-start-line="306" selection-start-column="22" selection-end-line="306" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/app/app.module.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3927">
-          <caret line="384" column="34" selection-start-line="384" selection-start-column="34" selection-end-line="384" selection-end-column="34" />
-          <folding />
+        <state relative-caret-position="187">
+          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1462019380253" expanded="true" signature="7575:7600" placeholder="..." />
+            <marker date="1462019380253" expanded="true" signature="7637:7662" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
